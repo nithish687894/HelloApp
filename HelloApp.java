@@ -4,16 +4,7 @@ public class HelloApp {
         if (args.length == 0) {
             System.out.println("Hello, World!");
         } else {
-
-            StringBuilder nameBuilder = new StringBuilder();
-
-            for (String name : args) {
-                nameBuilder.append(name).append(", ");
-            }
-
-            // remove last ", "
-            String names = nameBuilder.substring(0, nameBuilder.length() - 2);
-
+            String names = String.join(", ", args);
             System.out.println("Hello, " + names + "!");
         }
     }
