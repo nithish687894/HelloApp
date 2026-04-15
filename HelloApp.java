@@ -5,21 +5,16 @@ public class HelloApp {
             System.out.println("Hello, World!");
         } else {
 
-            StringBuilder sb = new StringBuilder();
-            sb.append("Hello, ");
-
-            boolean first = true;
+            StringBuilder nameBuilder = new StringBuilder();
 
             for (String name : args) {
-                if (!first) {
-                    sb.append(", ");
-                }
-                sb.append(name);
-                first = false;
+                nameBuilder.append(name).append(", ");
             }
 
-            sb.append("!");
-            System.out.println(sb.toString());
+            // remove last ", "
+            String names = nameBuilder.substring(0, nameBuilder.length() - 2);
+
+            System.out.println("Hello, " + names + "!");
         }
     }
 }
