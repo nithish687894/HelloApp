@@ -4,8 +4,22 @@ public class HelloApp {
         if (args.length == 0) {
             System.out.println("Hello, World!");
         } else {
-            String names = String.join(", ", args);
-            System.out.println("Hello, " + names + "!");
+
+            StringBuilder sb = new StringBuilder();
+            sb.append("Hello, ");
+
+            boolean first = true;
+
+            for (String name : args) {
+                if (!first) {
+                    sb.append(", ");
+                }
+                sb.append(name);
+                first = false;
+            }
+
+            sb.append("!");
+            System.out.println(sb.toString());
         }
     }
 }
